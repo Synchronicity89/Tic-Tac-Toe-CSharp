@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnomalyDetection", "AnomalyDetection\AnomalyDetection.csproj", "{B50AD2F4-600F-4359-BE4F-B6CBB405335B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToeEngine", "TicTacToeEngine\TicTacToeEngine.csproj", "{8B1949B7-117D-44C2-B7AA-9706EC27F0A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B50AD2F4-600F-4359-BE4F-B6CBB405335B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B50AD2F4-600F-4359-BE4F-B6CBB405335B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B50AD2F4-600F-4359-BE4F-B6CBB405335B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B50AD2F4-600F-4359-BE4F-B6CBB405335B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B1949B7-117D-44C2-B7AA-9706EC27F0A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B1949B7-117D-44C2-B7AA-9706EC27F0A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B1949B7-117D-44C2-B7AA-9706EC27F0A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B1949B7-117D-44C2-B7AA-9706EC27F0A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B95C52F-2DE7-45FB-A88F-4F2286C7F61A}
+	EndGlobalSection
+EndGlobal
