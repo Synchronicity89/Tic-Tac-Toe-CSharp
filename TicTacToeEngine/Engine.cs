@@ -43,36 +43,6 @@ namespace TicTacToeEngine.Version3
         {
             return board;
         }
-        //// The size of the board
-        //public const int Size = 3;
-
-        //// The board state as a two-dimensional array of symbols
-        //public Symbol[,] board;
-
-        //// Creates a new board with all cells empty
-        //public Board()
-        //{
-        //    board = new Symbol[Size, Size];
-        //    for (int i = 0; i < Size; i++)
-        //    {
-        //        for (int j = 0; j < Size; j++)
-        //        {
-        //            board[i, j] = Symbol.Empty;
-        //        }
-        //    }
-        //}
-
-        //// Updates the board with the given symbol at the given row and column
-        //public void UpdateBoard(Symbol symbol, int row, int column)
-        //{
-        //    board[row, column] = symbol;
-        //}
-
-        //// Returns the board state as a two-dimensional array of symbols
-        //public Symbol[,] GetBoardState()
-        //{
-        //    return board;
-        //}
 
     }
 
@@ -199,7 +169,7 @@ namespace TicTacToeEngine.Version3
         }
 
         public Status GetStatus()
-        {           
+        {
             return status;
         }
     }
@@ -422,44 +392,4 @@ namespace TicTacToeEngine.Version3
             }
         }
     }
-
-    // Represents the neural network model
-    //public class NeuralNetwork
-    //{
-    //    public Layer inputLayer;
-    //    public Layer hiddenLayer;
-    //    public Layer outputLayer;
-    //    public double learningRate;
-
-    //    public NeuralNetwork()
-    //    {
-    //        inputLayer = new Layer(Board.Size * Board.Size, NeuralNetwork.Sigmoid, ActivationFunctions.SigmoidDerivative);
-    //        // Initialize neural network layers and parameters
-    //        for (int i = 0; i < Board.Size; i++)
-    //        {
-    //            for (int j = 0; j < Board.Size; j++)
-    //            {
-    //                inputLayer.neurons[i * Board.Size + j].SetValue(0);
-    //            }
-    //        }
-    //    }
-
-    //    public void InitializeWeights(int seed)
-    //    {
-    //        // Initialize neural network weights with random values using the given seed
-    //    }
-
-    //    public double[] FeedForward(Symbol[,] input)
-    //    {
-    //        // Feed the input data forward through the neural network and return the output
-    //        return new double[0]; // Placeholder, implement the actual feedforward logic
-    //    }
-
-    //    public void Train(int epochs)
-    //    {
-    //        // Train the neural network with backpropagation and gradient descent for the specified number of epochs
-    //    }
-
-    //    // ... (other methods)
-    //}
 }
