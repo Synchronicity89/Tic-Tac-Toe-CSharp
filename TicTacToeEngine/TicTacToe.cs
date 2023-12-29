@@ -6,182 +6,6 @@ using TicTacToeEngine.Version3;
 
 namespace TicTacToeEngine
 {
-    // Represents the tic-tac-toe board
-
-    // Represents the tic-tac-toe game
-    //public class Game
-    //{
-    //    // The current player
-    //    public Player currentPlayer;
-
-    //    // The board
-    //    public Board board;
-
-    //    // The game status
-    //    public Status status;
-
-    //    // Creates a new game with the given player as the first player
-    //    public Game(Player firstPlayer)
-    //    {
-    //        currentPlayer = firstPlayer;
-    //        board = new Board();
-    //        status = Status.InProgress;
-    //    }
-
-    //    // Checks the game status and updates it accordingly
-    //    public void CheckStatus()
-    //    {
-    //        // Get the board state
-    //        Symbol[,] boardState = board.GetBoardState();
-
-    //        // Check the rows
-    //        for (int i = 0; i < Board.Size; i++)
-    //        {
-    //            if (boardState[i, 0] != Symbol.Empty &&
-    //                boardState[i, 0] == boardState[i, 1] &&
-    //                boardState[i, 0] == boardState[i, 2])
-    //            {
-    //                // A row is filled with the same symbol
-    //                status = boardState[i, 0] == Symbol.X ? Status.XWon : Status.OWon;
-    //                return;
-    //            }
-    //        }
-
-    //        // Check the columns
-    //        for (int j = 0; j < Board.Size; j++)
-    //        {
-    //            if (boardState[0, j] != Symbol.Empty &&
-    //                boardState[0, j] == boardState[1, j] &&
-    //                boardState[0, j] == boardState[2, j])
-    //            {
-    //                // A column is filled with the same symbol
-    //                status = boardState[0, j] == Symbol.X ? Status.XWon : Status.OWon;
-    //                return;
-    //            }
-    //        }
-
-    //        // Check the diagonals
-    //        if (boardState[0, 0] != Symbol.Empty &&
-    //            boardState[0, 0] == boardState[1, 1] &&
-    //            boardState[0, 0] == boardState[2, 2])
-    //        {
-    //            // The main diagonal is filled with the same symbol
-    //            status = boardState[0, 0] == Symbol.X ? Status.XWon : Status.OWon;
-    //            return;
-    //        }
-
-    //        if (boardState[0, 2] != Symbol.Empty &&
-    //            boardState[0, 2] == boardState[1, 1] &&
-    //            boardState[0, 2] == boardState[2, 0])
-    //        {
-    //            // The secondary diagonal is filled with the same symbol
-    //            status = boardState[0, 2] == Symbol.X ? Status.XWon : Status.OWon;
-    //            return;
-    //        }
-
-    //        // Check if the board is full
-    //        bool isFull = true;
-    //        for (int i = 0; i < Board.Size; i++)
-    //        {
-    //            for (int j = 0; j < Board.Size; j++)
-    //            {
-    //                if (boardState[i, j] == Symbol.Empty)
-    //                {
-    //                    // There is an empty cell
-    //                    isFull = false;
-    //                    break;
-    //                }
-    //            }
-    //            if (!isFull)
-    //            {
-    //                break;
-    //            }
-    //        }
-
-    //        if (isFull)
-    //        {
-    //            // The board is full and there is no winner
-    //            status = Status.Draw;
-    //            return;
-    //        }
-
-    //        // The game is still in progress
-    //        status = Status.InProgress;
-    //    }
-
-    //    // Validates the move and returns true if it is valid, false otherwise
-    //    public bool ValidateMove(int row, int column)
-    //    {
-    //        // Get the board state
-    //        Symbol[,] boardState = board.GetBoardState();
-
-
-    //        // Check if the row and column are within the board range
-    //        if (row < 0 || row >= Board.Size || column < 0 || column >= Board.Size)
-    //        {
-    //            return false;
-    //        }
-
-    //        // Check if the cell is empty
-    //        if (boardState[row, column] != Symbol.Empty)
-    //        {
-    //            return false;
-    //        }
-
-    //        // The move is valid
-    //        return true;
-    //    }
-
-    //    // Makes the move and updates the board and the game status
-    //    public void MakeMove(int row, int column)
-    //    {
-    //        // Update the board with the current player's symbol
-    //        board.UpdateBoard(currentPlayer == Player.X ? Symbol.X : Symbol.O, row, column);
-
-    //        // Check the game status
-    //        CheckStatus();
-
-    //        // Switch the current player
-    //        currentPlayer = GetOppositePlayer(currentPlayer);
-    //    }
-
-    //    // Returns the current player
-    //    public Player GetCurrentPlayer()
-    //    {
-    //        return currentPlayer;
-    //    }
-
-    //    // Returns the game status
-    //    public Status GetStatus()
-    //    {
-    //        return status;
-    //    }
-
-    ////Represents the two players, X and O 
-    ////public enum Player { X, O }
-
-    //// Returns the opposite player
-    //public Player GetOppositePlayer(Player player) { return player == Player.X ? Player.O : Player.X; }
-
-    //// Represents the three symbols, X, O, and Empty
-    ////public enum Symbol { X, O, Empty }
-
-    //// Returns the symbol as a string
-    //public string GetSymbolString(Symbol symbol)
-    //{
-    //    return symbol == Symbol.X ? "X" : symbol == Symbol.O ? "O" : " ";
-    //}
-
-    //// Represents the four possible game statuses, InProgress, XWon, OWon, and Draw
-    //// public enum Status { InProgress, XWon, OWon, Draw }
-
-    //// Returns the status as a string
-    //public string GetStatusString(Status status)
-    //{
-    //    return status == Status.InProgress ? "In Progress" : status == Status.XWon ? "X Won" : status == Status.OWon ? "O Won" : "Draw";
-    //}
-    //}
-
     // Represents the neural network engine
 
     public class Engine
@@ -474,7 +298,8 @@ namespace TicTacToeEngine
                 Symbol[,] input = GenerateRandomBoard();
 
                 // Generate the optimal output for the input using the minimax algorithm
-                double[] output = GenerateOptimalOutput(input);
+                //double[] output = GenerateOptimalOutput(input);
+                double[] output = ScaledOptimalOutput(input);
 
                 // Feed the input forward through the network and get the predicted output
                 double[] predictedOutput = FeedForward(input);
@@ -622,6 +447,25 @@ namespace TicTacToeEngine
             return output;
 
         }
+
+        public double[] ScaledOptimalOutput(Symbol[,] input)
+        {
+            //double[] output = GenerateOptimalOutput(input);
+            double[] output = GenerateOptimalOutput(input);
+            double[] optimalOutput = new double[output.GetLength(0)];
+            // Compress the output to a range of -1 to 1.  First find the maximum value in the output array, and the minimum value in the output array,
+            // then the difference between those two, and then divide each value in the output array by that difference.
+            double max = output.Max();
+            double min = output.Min();
+            double difference = max - min;
+            for (int i = 0; i < output.GetLength(0); i++)
+            {
+                optimalOutput[i] = output[i] / difference;
+            }
+
+            return optimalOutput;
+        }
+
 
         // Copies the board state
         public Symbol[,] CopyBoard(Symbol[,] board)
