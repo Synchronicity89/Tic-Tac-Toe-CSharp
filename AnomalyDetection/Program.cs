@@ -2,12 +2,14 @@
 // Initialize the Engine and start the game
 using TicTacToeEngine.Version3;
 
+const int EPOCHS = 10000;
 Game game = new Game(Player.X);
 Engine engine = new Engine(1, Symbol.X, 42);
 Dictionary<double, double> errors = new Dictionary<double, double>();
 Action<double, double> addError = (double x, double y) => errors.Add(x, y);
-engine.neuralNetwork.Train(10000, addError);
-for(int epoch = 0; epoch < 10000; epoch+=100)
+
+engine.neuralNetwork.Train(EPOCHS, addError);
+for(int epoch = 0; epoch < EPOCHS; epoch+=100)
 {
     Console.WriteLine("Epoch: " + epoch + ", error: " + errors[epoch]);
 }
