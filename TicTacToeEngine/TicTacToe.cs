@@ -411,7 +411,7 @@ namespace TicTacToeEngine
         }
 
         // Generates the optimal output for the input using the minimax algorithm
-        public double[] GenerateOptimalOutput(Symbol[,] input)
+        private double[] GenerateOptimalOutput(Symbol[,] input)
         {
             // Declare an array of doubles with the same size as the board
             double[] output = new double[Board.Size * Board.Size];
