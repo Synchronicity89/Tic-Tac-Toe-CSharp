@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnomalyDetection", "Anomaly
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToeEngine", "TicTacToeEngine\TicTacToeEngine.csproj", "{8B1949B7-117D-44C2-B7AA-9706EC27F0A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuralNet", "NeuralNet\NeuralNet.csproj", "{6FAC82FA-C753-4378-B8C0-D336DD93D3CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8B1949B7-117D-44C2-B7AA-9706EC27F0A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B1949B7-117D-44C2-B7AA-9706EC27F0A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B1949B7-117D-44C2-B7AA-9706EC27F0A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FAC82FA-C753-4378-B8C0-D336DD93D3CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FAC82FA-C753-4378-B8C0-D336DD93D3CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FAC82FA-C753-4378-B8C0-D336DD93D3CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FAC82FA-C753-4378-B8C0-D336DD93D3CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -10,6 +10,7 @@ namespace TicTacToeEngine.Version3
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection.Emit;
+    using NeuralNet;
 
     // Represents the tic-tac-toe board
     public class Board

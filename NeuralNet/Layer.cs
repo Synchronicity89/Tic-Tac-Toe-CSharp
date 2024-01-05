@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TicTacToeEngine
+namespace NeuralNet
 {
     // Represents a layer of the neural network
     public class Layer
