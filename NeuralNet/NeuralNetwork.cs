@@ -151,7 +151,5 @@ namespace NeuralNet
 
             return optimalOutput;
         }
-
-
     }
 }
