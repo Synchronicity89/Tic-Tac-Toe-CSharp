@@ -24,19 +24,19 @@ namespace NeuralNet
         };
 
         // Creates a new neural network model with the given number of input, hidden, and output neurons
-        public NeuralNetwork(int inputSize, int hiddenSize, int outputSize)
+        public NeuralNetwork(int inputSize, int hiddenSize, int outputSize, double? learnRate = 0.1)
         {
             // Create the input layer with the given size and a linear activation function
-            inputLayer = new Layer(inputSize, Linear, LinearDerivative);
+            inputLayer = new Layer(inputSize, inputSize, Linear, LinearDerivative);
 
             // Create the hidden layer with the given size and a sigmoid activation function
-            hiddenLayer = new Layer(hiddenSize, Sigmoid, SigmoidDerivative);
+            hiddenLayer = new Layer(hiddenSize, inputSize, Sigmoid, SigmoidDerivative);
 
             // Create the output layer with the given size and a sigmoid activation function
-            outputLayer = new Layer(outputSize, Sigmoid, SigmoidDerivative);
+            outputLayer = new Layer(outputSize, hiddenSize, Sigmoid, SigmoidDerivative);
 
-            // Set the learning rate to 0.1
-            learningRate = 0.1;
+            // Set the learning rate to 0.1 or learnRate if it is not null
+            learningRate = learnRate ?? 0.1;
         }
 
         // Initializes the weights of the neural network with random values from a normal distribution

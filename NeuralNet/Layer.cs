@@ -39,7 +39,7 @@ namespace NeuralNet
         public int Size { get => size; set => size = value; }
 
         // Creates a new layer with the given size and activation function
-        public Layer(int size, Func<double, double> activationFunction, Func<double, double> derivativeFunction)
+        public Layer(int size, int previousLayerSize, Func<double, double> activationFunction, Func<double, double> derivativeFunction)
         {
             // Set the size, activation function, and derivative function
             this.Size = size;
@@ -55,7 +55,7 @@ namespace NeuralNet
                 // Create a new neuron with the activation function and derivative function
                 neurons[i] = new Neuron(activationFunction, derivativeFunction);
             }
-            weights = new double[size, size];
+            weights = new double[size, previousLayerSize];
             biases = new double[size];
             inputs = new double[size];
             outputs = new double[size];
@@ -200,7 +200,7 @@ namespace NeuralNet
         }
 
         // Calculates the errors of the layer by multiplying the next layer errors with the weights and applying the derivative function
-        public void CalculateErrors(Layer nextLayer, double[] predictedOuput = null)
+        public void CalculateErrors(Layer nextLayer, double[]? predictedOuput = null)
         {
             if(predictedOuput != null)
             {
