@@ -71,7 +71,7 @@ namespace NeuralNet
         // Multiplies the error of the neuron by the derivative function of the input
         public void ApplyDerivative()
         {
-            error *= derivativeFunction(input);
+            error *= derivativeFunction(value);
         }
 
         // Gets the value of the neuron
