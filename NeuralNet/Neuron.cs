@@ -109,5 +109,4 @@ namespace NeuralNet
             return value;
         }
     }
-
 }

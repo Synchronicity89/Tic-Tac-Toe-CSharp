@@ -6,6 +6,76 @@ namespace NeuralNet.Tests
     [TestFixture]
     public class LayerTests
     {
+//   - **Functionality**: Represents a single neuron with its properties.
+//   - **Sub-points**:
+//     - **Weights**: A list of weights corresponding to inputs.
+//       - **Initialization**: Randomly initialize weights.
+// Tests that the weights of the neuron a appropriately initialized
+        [Test]
+        public void InitializeWeights_Should_InitializeWeights()
+        {
+            // Arrange
+            NeuralNetwork neuralNetwork = new NeuralNetwork(2, new int[]{2,3}, 2);
+
+            // Act
+            neuralNetwork.InitializeWeights(222);
+
+            // Assert
+            // Assert.AreEqual(0.7, neuralNetwork.l(0));
+            // Assert.AreEqual(0.1, neuralNetwork.GetWeight(1));
+            // Assert.AreEqual(0.4, neuralNetwork.GetWeight(2));
+        }
+
+        // Tests that the bias of the neuron is appropriately initialized
+        [Test]
+        public void InitializeWeights_Should_InitializeBias()
+        {
+            // Arrange
+            var layer = new Layer(2, 2, NeuralNetwork.Sigmoid, NeuralNetwork.SigmoidDerivative);
+
+            // Act
+
+            // Assert
+            Assert.That(0.6, Is.EqualTo(0.5));
+        }
+
+        // Tests that the weights of the neuron are appropriately updated
+        // [Test]
+        // public void UpdateWeights_Should_UpdateWeights()
+        // {
+        //     // Arrange
+        //     var neuron = new Neuron(null, null);
+        //     neuron.InitializeWeights(123);
+
+        //     // Act
+        //     neuron.UpdateWeights(0.1);
+
+        //     // Assert
+        //     Assert.AreEqual(0.7 - 0.1, neuron.GetWeight(0));
+        //     Assert.AreEqual(0.1 - 0.1, neuron.GetWeight(1));
+        //     Assert.AreEqual(0.4 - 0.1, neuron.GetWeight(2));
+        // }
+
+        // Tests that the bias of the neuron is appropriately updated
+        // [Test]
+        // public void UpdateWeights_Should_UpdateBias()
+        // {
+        //     // Arrange
+        //     var neuron = new Neuron(null, null);
+        //     neuron.InitializeWeights(123);
+
+        //     // Act
+        //     neuron.UpdateWeights(0.1);
+
+        //     // Assert
+        //     Assert.AreEqual(0.5 - 0.1, neuron.GetBias());
+        // }
+
+
+//       - **Update Mechanism**: Method to update weights during training.
+//     - **Bias**: A single bias value.
+//       - **Initialization**: Randomly initialize or set to zero.
+//       - **Update Mechanism**: Method to update bias during training.
 
 // #### 2. Layer Class
 //   - **Functionality**: Represents a layer of neurons.

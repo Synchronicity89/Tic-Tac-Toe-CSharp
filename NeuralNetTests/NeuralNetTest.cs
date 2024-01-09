@@ -49,7 +49,7 @@ namespace NeuralNet.Tests
         public void FeedForward_ShouldReturnCorrectOneOutput()
         {
             // Arrange
-            NeuralNetwork neuralNetwork = new NeuralNetwork(2, 2, 1);
+            NeuralNetwork neuralNetwork = new NeuralNetwork(2,  new []{2,3}, 1);
             neuralNetwork.InitializeWeights(123);
 
             double[] input = { 0.5, 0.8 };
@@ -66,7 +66,7 @@ namespace NeuralNet.Tests
         public void FeedForward_ShouldReturnCorrectTwoOutput()
         {
             // Arrange
-            NeuralNetwork neuralNetwork = new NeuralNetwork(2, 2, 2);
+            NeuralNetwork neuralNetwork = new NeuralNetwork(2, new []{2,3}, 2);
             neuralNetwork.InitializeWeights(222);
 
             double[] input = { 0.5, 0.8 };
@@ -84,7 +84,7 @@ namespace NeuralNet.Tests
         public void Train_ShouldUpdateWeightsAndBiasesOneOutput()
         {
             // Arrange
-            NeuralNetwork neuralNetwork = new NeuralNetwork(2, 2, 1, 0.001);
+            NeuralNetwork neuralNetwork = new NeuralNetwork(2, new []{2,3}, 1, 0.001);
             neuralNetwork.InitializeWeights(123);
 
             double[] input = { 0.5, 0.8 };
@@ -107,7 +107,7 @@ namespace NeuralNet.Tests
         public void Train_ShouldUpdateWeightsAndBiasesTwoOutputs()
         {
             // Arrange
-            NeuralNetwork neuralNetwork = new NeuralNetwork(2, 2, 2);
+            NeuralNetwork neuralNetwork = new NeuralNetwork(2, new []{2,3}, 2);
             neuralNetwork.InitializeWeights(123);
 
             double[] input = { 0.5, 0.8 };

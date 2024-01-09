@@ -49,7 +49,7 @@ namespace TicTacToeEngine
             Symbol computerSymbol = GetOppositeSymbol(humanSymbol);
 
             // Create a new neural network model with 9 input neurons, 9 hidden neurons, and 9 output neurons
-            neuralNetwork = new NeuralNetwork(9, 9, 9);
+            neuralNetwork = new NeuralNetwork(9, new []{9,9}, 9);
 
             // Initialize the neural network weights with the random seed
             neuralNetwork.InitializeWeights(seed);

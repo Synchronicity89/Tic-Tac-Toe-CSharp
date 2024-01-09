@@ -1,27 +1,3 @@
-// #### 1. Neuron Class
-//   - **Functionality**: Represents a single neuron with its properties.
-//   - **Sub-points**:
-//     - **Weights**: A list of weights corresponding to inputs.
-//       - **Initialization**: Randomly initialize weights.
-//       - **Update Mechanism**: Method to update weights during training.
-//     - **Bias**: A single bias value.
-//       - **Initialization**: Randomly initialize or set to zero.
-//       - **Update Mechanism**: Method to update bias during training.
-
-
-// #### 4. Neuron Activation
-//   - **Functionality**: Define activation function for neurons.
-//   - **Sub-points**:
-//     - **Function Types**: Include common functions like Sigmoid, ReLU.
-//       - **Extensibility**: Ability to plug in custom activation functions.
-//       - **Default Option**: Set a default activation function.
-
-// #### 5. Weight Initialization
-//   - **Functionality**: Define strategy for initializing weights.
-//   - **Sub-points**:
-//     - **Strategies**: Include methods like Xavier, He initialization.
-//       - **Random Initialization**: Default random weight initialization.
-//       - **Custom Initialization**: Allow custom weight initialization methods.
 
 using NUnit.Framework;
 
@@ -40,7 +16,7 @@ namespace NeuralNet.Tests
             neuron.SetValue(5);
 
             // Assert
-            Assert.AreEqual(5, neuron.GetValue());
+            Assert.That(neuron.GetValue(), Is.EqualTo(5));
         }
 
         [Test]
@@ -53,7 +29,7 @@ namespace NeuralNet.Tests
             neuron.SetInput(2);
 
             // Assert
-            Assert.AreEqual(2, neuron.GetInput());
+            Assert.That(neuron.GetInput(), Is.EqualTo(2));
         }
 
         [Test]
@@ -66,7 +42,7 @@ namespace NeuralNet.Tests
             neuron.SetError(0.5);
 
             // Assert
-            Assert.AreEqual(0.5, neuron.GetError());
+            Assert.That(neuron.GetError(), Is.EqualTo(0.5));
         }
 
         [Test]
@@ -79,7 +55,7 @@ namespace NeuralNet.Tests
             neuron.AddInput(3);
 
             // Assert
-            Assert.AreEqual(3, neuron.GetInput());
+            Assert.That(neuron.GetInput(), Is.EqualTo(3));
         }
 
         [Test]
@@ -92,7 +68,7 @@ namespace NeuralNet.Tests
             neuron.AddError(0.2);
 
             // Assert
-            Assert.AreEqual(0.2, neuron.GetError());
+            Assert.That(neuron.GetError(), Is.EqualTo(0.2));
         }
 
         [Test]
@@ -106,7 +82,7 @@ namespace NeuralNet.Tests
             neuron.CalculateOutput();
 
             // Assert
-            Assert.AreEqual(6, neuron.GetValue());
+            Assert.That(neuron.GetValue(), Is.EqualTo(6));
         }
 
         [Test]
@@ -122,7 +98,7 @@ namespace NeuralNet.Tests
             neuron.ApplyDerivative();
 
             // Assert that the error is equal to 0.3 within a margin of 0.000001
-            Assert.AreEqual(0.3, neuron.GetError(),0.000001);
+            Assert.That(neuron.GetError(), Is.EqualTo(0.3).Within(0.000001));
         }
 
         [Test]
@@ -141,7 +117,7 @@ namespace NeuralNet.Tests
             neuron.ApplyDerivative();
 
             // Assert
-            Assert.AreEqual(expectedError, neuron.GetError(), 0.0001); // Check if the adjusted error is as expected
+            Assert.That(neuron.GetError(), Is.EqualTo(expectedError).Within(0.0001)); // Check if the adjusted error is as expected
         }
 
         [Test]
@@ -155,7 +131,40 @@ namespace NeuralNet.Tests
             var output = neuron.GetOutput();
 
             // Assert
-            Assert.AreEqual(4, output);
+            Assert.That(output, Is.EqualTo(4));
         }
+
+        // #### 1. Neuron Class
+
+
+// #### 4. Neuron Activation
+//   - **Functionality**: Define activation function for neurons.
+        // Tests that the value of the neuron is appropriately calculated
+        [Test]
+        public void CalculateValue_Should_CalculateValue()
+        {
+            // Arrange
+            var neuron = new Neuron(NeuralNetwork.Sigmoid, null);
+            neuron.SetInput(0.5); // Set an input value
+
+            var expectedValue = NeuralNetwork.Sigmoid(neuron.GetInput()); // Calculate the expected value
+
+            // Act
+            neuron.CalculateOutput();
+
+            // Assert
+            Assert.That(neuron.GetValue(), Is.EqualTo(expectedValue)); // Check if the value is as expected
+        }
+//     - **Function Types**: Include common functions like Sigmoid, ReLU.
+//       - **Extensibility**: Ability to plug in custom activation functions.
+//       - **Default Option**: Set a default activation function.
+
+// #### 5. Weight Initialization
+//   - **Functionality**: Define strategy for initializing weights.
+//   - **Sub-points**:
+//     - **Strategies**: Include methods like Xavier, He initialization.
+//       - **Random Initialization**: Default random weight initialization.
+//       - **Custom Initialization**: Allow custom weight initialization methods.
+
     }
 }

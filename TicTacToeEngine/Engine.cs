@@ -218,7 +218,7 @@ namespace TicTacToeEngine.Version3
             this.humanSymbol = humanSymbol;
             this.computerSymbol = humanSymbol == Symbol.X ? Symbol.O : Symbol.X;
             this.seed = seed;
-            neuralNetwork = new NeuralNetwork(9, 9, 9);
+            neuralNetwork = new NeuralNetwork(9, new []{9,9}, 9);
             Initialize();
         }
 
